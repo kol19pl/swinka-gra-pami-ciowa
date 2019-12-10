@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Piggy memory game.</string>
+    <string name="aby_odblokowa_ten_lewel_odblokuj_poprzedni">To unlock this level, unlock the previous one :)</string>
+    <string name="castom">Custom</string>
+    <string name="czy_napewno_chcesz_wyj">Are you sure you want to leave?</string>
+    <string name="do_zaliczenia_lew">Points to pass the level</string>
+    <string name="error">Answer incorrect  ;(</string>
+    <string name="exit">EXIT</string>
+    <string name="graj">Play</string>
+    <string name="gratulacje">"Congratulations!!!  "</string>
+    <string name="how_to_play">\?</string>
+    <string name="kolor_niebieski">blue color</string>
+    <string name="kolor_pomaranczowy">Orange color</string>
+    <string name="kolor_ruzowy">pink color</string>
+    <string name="kolor_zielony">green color</string>
+    <string name="kolor_zu_ty">yellow color</string>
+    <string name="kolr_czerwony">Red colour</string>
+    <string name="lewel_zaliczony">Level Passed</string>
+    <string name="nie">no</string>
+    <string name="pomoc1">Click to reveal the cards.</string>
+    <string name="pomoc2">Remember the number of individual colors. Click when you\'re ready.</string>
+    <string name="pomoc3">Analyze the picture and indicate the color that is missing. Click when you\'re ready.</string>
+    <string name="pomoc4">Indicate the missing color.</string>
+    <string name="tak">Yes</string>
+    <string name="tura_zaliczona">" turn completed."</string>
+    <string name="wybie_level">Select Level</string>
+    <string name="wybierz_kolor_zakrytego_pola">Select the color of the hidden field</string>
+</resources>

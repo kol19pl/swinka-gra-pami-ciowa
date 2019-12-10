@@ -14,11 +14,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class GameLI extends AppCompatActivity {
 
@@ -53,10 +59,13 @@ public class GameLI extends AppCompatActivity {
 
     int PunktyZaliczeniaLewelu=0;
 
+    int PunktyDoZaliczeniaLewelu=3;
+
 
 
     int lewel=0;
 
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -73,7 +82,17 @@ public class GameLI extends AppCompatActivity {
         if(lewel == 1){StartL1();}
         if(lewel == 2){StartL2();}
         if(lewel == 3){StartL3();}
-        if(lewel>3){StartL4UP();}
+        if(lewel>3){PunktyDoZaliczeniaLewelu=5; StartL4UP();}
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
     }
@@ -81,26 +100,23 @@ public class GameLI extends AppCompatActivity {
     void StartL1(){
         setContentView(R.layout.leweljeden);
         GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
-        GurnabelkaPunkty.setText("0/3");
         uruchomlewel(lewel);
     }
     void StartL2(){
         setContentView(R.layout.leweljeden);
         GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
-        GurnabelkaPunkty.setText("0/3");
         uruchomlewel(lewel);
     }
     void StartL3(){
         setContentView(R.layout.leweljeden);
         GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
-        GurnabelkaPunkty.setText("0/3");
 
         uruchomlewel(lewel);
 
     } void StartL4UP(){
         setContentView(R.layout.lewelcztery);
         GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
-        GurnabelkaPunkty.setText("0/3");
+
 
         uruchomlewel(lewel);
     }
@@ -136,7 +152,7 @@ public class GameLI extends AppCompatActivity {
     }
 
     void uruchomlewel(int lewel){
-        GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+        GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
         Listakolorow=new ArrayList<>();
         losowaniekolorukart(lewel);
         przypiszkarty(lewel);
@@ -425,10 +441,10 @@ public class GameLI extends AppCompatActivity {
             {
                 if(kolorKartyWybranej==1){
                 PunktyZaliczeniaLewelu++;
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
 
                 if(PunktyZaliczeniaLewelu<3){
-                    Powiadomienie("Gratulacje!!! "+PunktyZaliczeniaLewelu+"tura zaliczona.");
+                    Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
                     zakryjkarty();
                     uruchomlewel(lewel);
                 }
@@ -436,10 +452,10 @@ public class GameLI extends AppCompatActivity {
                     //Powiadomienie("Lewel zaliczony");
                     lewelZaliczony();}
                 }
-                else {Powiadomienie("error");
+                else {Powiadomienie(getResources().getString(R.string.error));
                     PunktyZaliczeniaLewelu--; zakryjkarty();
                     uruchomlewel(lewel);}
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
                 dialog.cancel();
 
             }
@@ -449,10 +465,10 @@ public class GameLI extends AppCompatActivity {
             {
                 if(kolorKartyWybranej==2){
                     PunktyZaliczeniaLewelu++;
-                    GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
 
                     if(PunktyZaliczeniaLewelu<3){
-                        Powiadomienie("Gratulacje!!! "+PunktyZaliczeniaLewelu+"tura zaliczona.");
+                        Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
                         zakryjkarty();
                         uruchomlewel(lewel);
                     }
@@ -461,9 +477,9 @@ public class GameLI extends AppCompatActivity {
                         lewelZaliczony();
                     }
                 }
-                else {Powiadomienie("error");PunktyZaliczeniaLewelu--; zakryjkarty();
+                else {Powiadomienie(getResources().getString(R.string.error));PunktyZaliczeniaLewelu--; zakryjkarty();
                     uruchomlewel(lewel);}
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
                 dialog.cancel();
             }
         });
@@ -472,10 +488,10 @@ public class GameLI extends AppCompatActivity {
             {
                 if(kolorKartyWybranej==3){
                     PunktyZaliczeniaLewelu++;
-                    GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
 
                     if(PunktyZaliczeniaLewelu<3){
-                        Powiadomienie("Gratulacje!!! "+PunktyZaliczeniaLewelu+"tura zaliczona.");
+                        Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
                         zakryjkarty();
                         uruchomlewel(lewel);
                     }
@@ -484,9 +500,9 @@ public class GameLI extends AppCompatActivity {
                         //Powiadomienie("Lewel zaliczony");
                         }
                 }
-                else {Powiadomienie("error");PunktyZaliczeniaLewelu--; zakryjkarty();
+                else {Powiadomienie(getResources().getString(R.string.error));PunktyZaliczeniaLewelu--; zakryjkarty();
                     uruchomlewel(lewel);}
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
                 dialog.cancel();
             }
         });
@@ -495,10 +511,10 @@ public class GameLI extends AppCompatActivity {
             {
                 if(kolorKartyWybranej==4){
                     PunktyZaliczeniaLewelu++;
-                    GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
 
                     if(PunktyZaliczeniaLewelu<3){
-                        Powiadomienie("Gratulacje!!! "+PunktyZaliczeniaLewelu+"tura zaliczona.");
+                        Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
                         zakryjkarty();
                         uruchomlewel(lewel);
                     }
@@ -507,9 +523,9 @@ public class GameLI extends AppCompatActivity {
                         lewelZaliczony();
                     }
                 }
-                else {Powiadomienie("error");PunktyZaliczeniaLewelu--; zakryjkarty();
+                else {Powiadomienie(getResources().getString(R.string.error));PunktyZaliczeniaLewelu--; zakryjkarty();
                     uruchomlewel(lewel);}
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
                 dialog.cancel();
             }
         });
@@ -518,10 +534,10 @@ public class GameLI extends AppCompatActivity {
             {
                 if(kolorKartyWybranej==5){
                     PunktyZaliczeniaLewelu++;
-                    GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
 
                     if(PunktyZaliczeniaLewelu<3){
-                        Powiadomienie("Gratulacje!!! "+PunktyZaliczeniaLewelu+"tura zaliczona.");
+                        Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
                         zakryjkarty();
                         uruchomlewel(lewel);
                     }
@@ -530,9 +546,14 @@ public class GameLI extends AppCompatActivity {
                         lewelZaliczony();
                     }
                 }
-                else {Powiadomienie("error");PunktyZaliczeniaLewelu--; zakryjkarty();
-                    uruchomlewel(lewel);}
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                else {Powiadomienie(getResources().getString(R.string.error));
+                  if(PunktyDoZaliczeniaLewelu>0)
+                  {
+                      PunktyZaliczeniaLewelu--;
+                  }
+                  zakryjkarty();
+                  uruchomlewel(lewel);}
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
                 dialog.cancel();
             }
         });
@@ -541,10 +562,10 @@ public class GameLI extends AppCompatActivity {
             {
                 if(kolorKartyWybranej==6){
                     PunktyZaliczeniaLewelu++;
-                    GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
 
                     if(PunktyZaliczeniaLewelu<3){
-                        Powiadomienie("Gratulacje!!! "+PunktyZaliczeniaLewelu+"tura zaliczona.");
+                        Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
                         zakryjkarty();
                         uruchomlewel(lewel);
                     }
@@ -553,9 +574,9 @@ public class GameLI extends AppCompatActivity {
                         lewelZaliczony();
                     }
                 }
-                else {Powiadomienie("error");PunktyZaliczeniaLewelu--; zakryjkarty();
+                else {Powiadomienie(getResources().getString(R.string.error));PunktyZaliczeniaLewelu--; zakryjkarty();
                     uruchomlewel(lewel);}
-                GurnabelkaPunkty.setText(""+PunktyZaliczeniaLewelu+"/3");
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
                 dialog.cancel();
             }
         });
@@ -771,7 +792,7 @@ public class GameLI extends AppCompatActivity {
         Snackbar.make(this.findViewById(android.R.id.content),
                 wiadomosc,
                 Snackbar.LENGTH_SHORT)
-                .setDuration(10000).setAction("Action", null).show();
+                .setDuration(5000).setAction("Action", null).show();
     }
 
 

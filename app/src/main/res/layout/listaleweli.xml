@@ -11,7 +11,7 @@
 
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L1" />
+        android:text="@string/l1" />
 
     <Button
         android:id="@+id/b2"
@@ -20,7 +20,7 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L2" />
+        android:text="@string/l2" />
 
     <Button
         android:id="@+id/b3"
@@ -29,7 +29,7 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L3" />
+        android:text="@string/l3" />
 
     <Button
         android:id="@+id/b4"
@@ -38,7 +38,7 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L4" />
+        android:text="@string/l4" />
 
     <Button
         android:id="@+id/b5"
@@ -47,7 +47,7 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L5" />
+        android:text="@string/l5" />
 
     <Button
         android:id="@+id/b6"
@@ -56,7 +56,7 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L6" />
+        android:text="@string/l6" />
 
     <Button
         android:id="@+id/b7"
@@ -65,7 +65,7 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L7" />
+        android:text="@string/l7" />
 
     <Button
         android:id="@+id/b8"
@@ -74,5 +74,5 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="L8" />
+        android:text="@string/l8" />
 </LinearLayout>

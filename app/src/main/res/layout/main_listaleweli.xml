@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#FFB300"
-        android:text="Wybież Level"
+        android:text="@string/wybie_level"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"

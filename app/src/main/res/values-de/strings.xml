@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Piggy Memory-Spiel.</string>
+    <string name="aby_odblokowa_ten_lewel_odblokuj_poprzedni">Um dieses Level freizuschalten, entsperren Sie das vorherige :)</string>
+    <string name="castom">Brauch</string>
+    <string name="error">Antwort falsch  ;(</string>
+    <string name="exit">EXIT</string>
+    <string name="graj">Spielen</string>
+    <string name="gratulacje">Herzliche Glückwünsche!!!</string>
+    <string name="kolor_niebieski">blaue Farbe</string>
+    <string name="kolor_pomaranczowy">orange Farbe</string>
+    <string name="kolor_ruzowy">pinke Farbe</string>
+    <string name="kolor_zielony">grüne Farbe</string>
+    <string name="kolor_zu_ty">gelbe Farbe</string>
+    <string name="kolr_czerwony">rote Farbe</string>
+    <string name="lewel_zaliczony">Level bestanden</string>
+    <string name="tura_zaliczona">wiederum abgeschlossen.</string>
+    <string name="wybie_level">Stufe auswählen</string>
+    <string name="wybierz_kolor_zakrytego_pola">Wählen Sie die Farbe des ausgeblendeten Feldes</string>
+    <string name="how_to_play">\?</string>
+    <string name="do_zaliczenia_lew">Punkte, um das Level zu bestehen</string>
+    <string name="pomoc1">Klicken Sie, um die Karten anzuzeigen.</string>
+    <string name="pomoc2">Erinnern Sie sich an die Anzahl der einzelnen Farben. Klicken Sie, wenn Sie fertig sind.</string>
+    <string name="pomoc3">Analysieren Sie das Bild und geben Sie die fehlende Farbe an. Klicken Sie, wenn Sie fertig sind.</string>
+    <string name="pomoc4">Geben Sie die fehlende Farbe an.</string>
+    <string name="czy_napewno_chcesz_wyj">Bist du sicher, dass du gehen willst?</string>
+    <string name="nie">nicht</string>
+    <string name="tak">so</string>
+</resources>

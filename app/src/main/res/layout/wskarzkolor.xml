@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wybierz kolor zakrytego pola"
+        android:text="@string/wybierz_kolor_zakrytego_pola"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -35,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/czerwona" />
+            android:background="@drawable/czerwona"
+            android:contentDescription="@string/kolr_czerwony" />
 
         <ImageButton
             android:id="@+id/ziel"
@@ -43,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/zielona" />
+            android:background="@drawable/zielona"
+            android:contentDescription="@string/kolor_zielony" />
 
         <ImageButton
             android:id="@+id/zul"
@@ -51,7 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/zulta" />
+            android:background="@drawable/zulta"
+            android:contentDescription="@string/kolor_zu_ty" />
 
         <ImageButton
             android:id="@+id/nieb"
@@ -59,7 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/niebieska" />
+            android:background="@drawable/niebieska"
+            android:contentDescription="@string/kolor_niebieski" />
 
     </TableRow>
 
@@ -78,15 +82,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/pomaranczowa" />
+            android:background="@drawable/pomaranczowa"
+            android:contentDescription="@string/kolor_pomaranczowy" />
 
         <ImageButton
             android:id="@+id/ruz"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ruzowa" />
+            android:background="@drawable/ruzowa"
+            android:contentDescription="@string/kolor_ruzowy" />
     </TableRow>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

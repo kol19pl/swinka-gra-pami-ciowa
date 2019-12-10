@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Świnka gra pamięciowa.</string>
+    <string name="aby_odblokowa_ten_lewel_odblokuj_poprzedni">Aby odblokować ten level odblokuj poprzedni :)</string>
+    <string name="castom">Custom</string>
+    <string name="exit">EXIT</string>
+    <string name="graj">Graj</string>
+    <string name="kolor_niebieski">kolor niebieski</string>
+    <string name="kolor_pomaranczowy">kolor pomarańczowy</string>
+    <string name="kolor_ruzowy">kolor różowy</string>
+    <string name="kolor_zielony">kolor zielony</string>
+    <string name="kolor_zu_ty">kolor żółty</string>
+    <string name="kolr_czerwony">Kolor czerwony</string>
+    <string name="lewel_zaliczony">Level Zaliczony</string>
+    <string name="wybie_level">Wybierz Level</string>
+    <string name="wybierz_kolor_zakrytego_pola">Wybierz kolor zakrytego pola</string>
+    <string name="gratulacje">"Gratulacje!!!           "</string>
+    <string name="error">Odpowiedz błędna ;(</string>
+    <string name="tura_zaliczona">" tura zaliczona. "</string>
+    <string name="how_to_play">\?</string>
+    <string name="do_zaliczenia_lew">Punkty do zaliczenia levelu</string>
+    <string name="pomoc1">Kliknij, aby odkryć karty.</string>
+    <string name="pomoc4">Wskaż brakujący kolor.</string>
+    <string name="pomoc2">Zapamiętaj ilość poszczególnych kolorów. Kliknij, gdy będziesz gotów.</string>
+    <string name="pomoc3">Przeanalizuj obrazek i wskaż kolor, którego brakuję. Kliknij, gdy będziesz gotów.</string>
+    <string name="czy_napewno_chcesz_wyj">Czy na pewno chcesz wyjść?</string>
+    <string name="nie">nie</string>
+    <string name="tak">tak</string>
+</resources>
