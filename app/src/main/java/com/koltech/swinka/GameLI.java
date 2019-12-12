@@ -29,7 +29,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class GameLI extends AppCompatActivity {
 
     ///kart storedz
-    ImageButton K1,K2,K3,K4,K5,K6,K7,K8,K9;
+    ImageButton K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17,K20;
     //  Resources res;
     Drawable zakryta;
     Drawable czerwona;
@@ -47,7 +47,7 @@ public class GameLI extends AppCompatActivity {
     SharedPreferences.Editor editorpref;
 
      //Kolory kart
-     Integer Kk1,Kk2,Kk3,Kk4,Kk5,Kk6,Kk7,Kk8,Kk9;
+     Integer Kk1,Kk2,Kk3,Kk4,Kk5,Kk6,Kk7,Kk8,Kk9,Kk10,Kk11,Kk12,Kk13,Kk14,Kk15,Kk16,Kk17,Kk18,Kk19,Kk20;
      //1 czerwona
      //2 niebieska
      //3 zielona
@@ -82,7 +82,9 @@ public class GameLI extends AppCompatActivity {
         if(lewel == 1){StartL1();}
         if(lewel == 2){StartL2();}
         if(lewel == 3){StartL3();}
-        if(lewel>3){PunktyDoZaliczeniaLewelu=5; StartL4UP();}
+        if(lewel>3&&lewel<9){PunktyDoZaliczeniaLewelu=5; StartL4UP();}
+        if(lewel>8&&lewel<14){PunktyDoZaliczeniaLewelu=5; StartL9UP();}
+        if(lewel>13){PunktyDoZaliczeniaLewelu=5; StartL14UP();}
 
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -113,11 +115,21 @@ public class GameLI extends AppCompatActivity {
 
         uruchomlewel(lewel);
 
-    } void StartL4UP(){
+    }
+    void StartL4UP(){
         setContentView(R.layout.lewelcztery);
         GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
+        uruchomlewel(lewel);
+    }
+    void StartL9UP(){
+        setContentView(R.layout.leweldziewienc);
+        GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
+        uruchomlewel(lewel);
+    }
 
-
+    void StartL14UP(){
+        setContentView(R.layout.lewelczternasty);
+        GurnabelkaPunkty = (TextView) findViewById(R.id.BelkaGpunkty);
         uruchomlewel(lewel);
     }
 
@@ -149,6 +161,19 @@ public class GameLI extends AppCompatActivity {
             K8.setBackground(zakryta);
             K9.setBackground(zakryta);
         }
+        if(lewel>8)
+        {
+            K10.setBackground(zakryta);
+            K11.setBackground(zakryta);
+            K12.setBackground(zakryta);
+        }
+        if(lewel>13){
+            K13.setBackground(zakryta);
+            K14.setBackground(zakryta);
+            K15.setBackground(zakryta);
+            K16.setBackground(zakryta);
+        }
+
     }
 
     void uruchomlewel(int lewel){
@@ -210,6 +235,7 @@ public class GameLI extends AppCompatActivity {
                 drugiKlik();
             }
         });
+        if(lewel>3){
         try {
             K7.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -234,6 +260,68 @@ public class GameLI extends AppCompatActivity {
             });
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        }
+        if(lewel>8){
+            try {
+                K10.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 10;
+                        drugiKlik();
+                    }
+                });
+                K11.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 11;
+                        drugiKlik();
+                    }
+                });
+                K12.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 12;
+                        drugiKlik();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel>8){
+            try {
+                K13.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 13;
+                        drugiKlik();
+                    }
+                });
+                K14.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 14;
+                        drugiKlik();
+                    }
+                });
+                K15.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 15;
+                        drugiKlik();
+                    }
+                });
+                K16.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        OdwrcWszystkieKarty();
+                        kartaWybrana = 16;
+                        drugiKlik();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
 
@@ -296,6 +384,7 @@ public class GameLI extends AppCompatActivity {
                 trzecuKlik();
             }
         });
+        if(lewel>3){
         try {
             K7.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -323,6 +412,75 @@ public class GameLI extends AppCompatActivity {
             });
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        }
+        if(lewel>8){
+            try {
+                K10.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+                K11.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+                K12.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel>13){
+            try {
+                K13.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+                K14.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+                K15.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+                K16.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        relosuj();
+                        OdwrcWszystkieKarty();
+                        odwrucWybrana();
+                        trzecuKlik();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
 
@@ -365,6 +523,7 @@ public class GameLI extends AppCompatActivity {
                 Odpowiedz();
             }
         });
+        if(lewel>3){
         try {
             K7.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -383,6 +542,54 @@ public class GameLI extends AppCompatActivity {
             });
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        }
+        if(lewel>8){
+            try {
+                K10.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+                K11.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+                K12.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel>13){
+            try {
+                K13.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+                K14.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+                K15.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+                K16.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Odpowiedz();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -409,6 +616,18 @@ public class GameLI extends AppCompatActivity {
         if(lewel==6){pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
         if(lewel==7){ruz.setVisibility(View.GONE);}
 
+        if(lewel==9){ziel.setVisibility(View.GONE);zul.setVisibility(View.GONE);pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
+        if(lewel==10){zul.setVisibility(View.GONE);pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
+        if(lewel==11){pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
+        if(lewel==12){ruz.setVisibility(View.GONE);}
+        if(lewel==13){}
+        if(lewel==14){ziel.setVisibility(View.GONE);zul.setVisibility(View.GONE);pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
+        if(lewel==15){zul.setVisibility(View.GONE);pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
+        if(lewel==16){pom.setVisibility(View.GONE);ruz.setVisibility(View.GONE);}
+        if(lewel==17){ruz.setVisibility(View.GONE);}
+        if(lewel==18){}
+
+
 
 
 
@@ -432,6 +651,14 @@ public class GameLI extends AppCompatActivity {
         if(kartaWybrana ==7){kolorKarty = Kk7;}
         if(kartaWybrana ==8){kolorKarty = Kk8;}
         if(kartaWybrana ==9){kolorKarty = Kk9;}
+        if(kartaWybrana ==10){kolorKarty = Kk10;}
+        if(kartaWybrana ==11){kolorKarty = Kk11;}
+        if(kartaWybrana ==12){kolorKarty = Kk12;}
+        if(kartaWybrana ==13){kolorKarty = Kk13;}
+        if(kartaWybrana ==14){kolorKarty = Kk14;}
+        if(kartaWybrana ==15){kolorKarty = Kk15;}
+        if(kartaWybrana ==16){kolorKarty = Kk15;}
+        if(kartaWybrana ==17){kolorKarty = Kk16;}
         final int kolorKartyWybranej=kolorKarty;
 
 
@@ -609,6 +836,19 @@ public class GameLI extends AppCompatActivity {
         if(lewel==6){  editorpref.putInt("lewel6",1);editorpref.apply();}
         if(lewel==7){  editorpref.putInt("lewel7",1);editorpref.apply();}
         if(lewel==8){  editorpref.putInt("lewel8",1);editorpref.apply();}
+        if(lewel==9){  editorpref.putInt("lewel9",1);editorpref.apply();}
+        if(lewel==10){  editorpref.putInt("lewel10",1);editorpref.apply();}
+        if(lewel==11){  editorpref.putInt("lewel11",1);editorpref.apply();}
+        if(lewel==12){  editorpref.putInt("lewel12",1);editorpref.apply();}
+        if(lewel==13){  editorpref.putInt("lewel13",1);editorpref.apply();}
+        if(lewel==14){  editorpref.putInt("lewel14",1);editorpref.apply();}
+        if(lewel==15){  editorpref.putInt("lewel15",1);editorpref.apply();}
+        if(lewel==16){  editorpref.putInt("lewel16",1);editorpref.apply();}
+        if(lewel==17){  editorpref.putInt("lewel17",1);editorpref.apply();}
+        if(lewel==18){  editorpref.putInt("lewel15",1);editorpref.apply();}
+        if(lewel==19){  editorpref.putInt("lewel15",1);editorpref.apply();}
+
+
 
 
 
@@ -644,6 +884,30 @@ public class GameLI extends AppCompatActivity {
         if(kartaWybrana==9){
             K9.setBackground(zakryta);
         }
+        if(kartaWybrana==10){
+            K10.setBackground(zakryta);
+        }
+        if(kartaWybrana==11){
+            K11.setBackground(zakryta);
+        }
+        if(kartaWybrana==12){
+            K12.setBackground(zakryta);
+        }
+        if(kartaWybrana==13){
+            K13.setBackground(zakryta);
+        }
+        if(kartaWybrana==14){
+            K14.setBackground(zakryta);
+        }
+        if(kartaWybrana==15){
+            K15.setBackground(zakryta);
+        }
+        if(kartaWybrana==16){
+            K16.setBackground(zakryta);
+        }
+
+
+
 
     }
 
@@ -667,6 +931,28 @@ public class GameLI extends AppCompatActivity {
             Log.d("OdwrcKarte","K8: " +Kk8);
         Odwruckarte(K9,Kk9);
             Log.d("OdwrcKarte","K9: " +Kk9);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            Odwruckarte(K10,Kk10);
+            Log.d("OdwrcKarte","K10: " +Kk10);
+            Odwruckarte(K11,Kk11);
+            Log.d("OdwrcKarte","K11: " +Kk11);
+            Odwruckarte(K12,Kk12);
+            Log.d("OdwrcKarte","K12: " +Kk12);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            Odwruckarte(K13,Kk13);
+            Log.d("OdwrcKarte","K13: " +Kk13);
+            Odwruckarte(K14,Kk14);
+            Log.d("OdwrcKarte","K14: " +Kk14);
+            Odwruckarte(K15,Kk15);
+            Log.d("OdwrcKarte","K15: " +Kk15);
+            Odwruckarte(K16,Kk16);
+            Log.d("OdwrcKarte","K16: " +Kk16);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -695,6 +981,18 @@ public class GameLI extends AppCompatActivity {
             K8=findViewById(R.id.L4P8);
             K9=findViewById(R.id.L4P9);
         }
+        if(lewel>8){
+            K10=findViewById(R.id.L4P10);
+            K11=findViewById(R.id.L4P11);
+            K12=findViewById(R.id.L4P12);
+        }
+        if(lewel>13){
+            K13=findViewById(R.id.L4P13);
+            K14=findViewById(R.id.L4P14);
+            K15=findViewById(R.id.L4P15);
+            K16=findViewById(R.id.L4P16);
+        }
+
     }
 
     void Odwruckarte(ImageButton karta, int kolor){
@@ -730,6 +1028,24 @@ public class GameLI extends AppCompatActivity {
             Listakolorow.add(Kk8);
             Listakolorow.add(Kk9);
         }
+        if(lewel>8){
+            Kk10=losujkolor(lewel);
+            Kk11=losujkolor(lewel);
+            Kk12=losujkolor(lewel);
+            Listakolorow.add(Kk10);
+            Listakolorow.add(Kk11);
+            Listakolorow.add(Kk12);
+        }
+        if(lewel>13){
+            Kk13=losujkolor(lewel);
+            Kk14=losujkolor(lewel);
+            Kk15=losujkolor(lewel);
+            Kk16=losujkolor(lewel);
+            Listakolorow.add(Kk13);
+            Listakolorow.add(Kk14);
+            Listakolorow.add(Kk15);
+            Listakolorow.add(Kk16);
+        }
 
     }
 
@@ -745,6 +1061,18 @@ public class GameLI extends AppCompatActivity {
         if(lewel==6){los = r.nextInt(4)+1;}
         if(lewel==7){los = r.nextInt(5)+1;}
         if(lewel==8){los = r.nextInt(6)+1;}
+        if(lewel==9){los = r.nextInt(2)+1;}
+        if(lewel==10){los = r.nextInt(3)+1;}
+        if(lewel==11){los = r.nextInt(4)+1;}
+        if(lewel==12){los = r.nextInt(5)+1;}
+        if(lewel==13){los = r.nextInt(6)+1;}
+        ///lewel 14+
+        if(lewel==14){los = r.nextInt(2)+1;}
+        if(lewel==15){los = r.nextInt(3)+1;}
+        if(lewel==16){los = r.nextInt(4)+1;}
+        if(lewel==17){los = r.nextInt(5)+1;}
+        if(lewel==18){los = r.nextInt(6)+1;}
+        //
         return los;
     }
 
@@ -770,6 +1098,13 @@ public class GameLI extends AppCompatActivity {
                 if(i==6){ Kk7 = Listakolorow.get(los);}
                 if(i==7){ Kk8 = Listakolorow.get(los);}
                 if(i==8){ Kk9 = Listakolorow.get(los);}
+                if(i==9){ Kk10 = Listakolorow.get(los);}
+                if(i==10){ Kk11 = Listakolorow.get(los);}
+                if(i==11){ Kk12 = Listakolorow.get(los);}
+                if(i==12){ Kk13 = Listakolorow.get(los);}
+                if(i==13){ Kk14 = Listakolorow.get(los);}
+                if(i==14){ Kk15 = Listakolorow.get(los);}
+                if(i==15){ Kk16 = Listakolorow.get(los);}
                 Log.d("I","i:"+i);
                 psl.add(los);
                 cykle++;

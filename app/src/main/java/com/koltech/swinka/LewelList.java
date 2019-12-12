@@ -16,7 +16,7 @@ import androidx.core.content.res.ResourcesCompat;
 import java.lang.reflect.Array;
 
 public class LewelList extends AppCompatActivity {
-    Button B1,B2,B3,B4,B5,B6,B7,B8;
+    Button B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12,B13,B14,B15,B16,B17,B18,B19,B20;
     Drawable chek;
     int lewel1 =0;
     int lewel2 =0;
@@ -32,6 +32,12 @@ public class LewelList extends AppCompatActivity {
     int lewel12 =0;
     int lewel13 =0;
     int lewel14 =0;
+    int lewel15 =0;
+    int lewel16 =0;
+    int lewel17 =0;
+    int lewel18 =0;
+    int lewel19 =0;
+    int lewel20 =0;
 
 
     @Override
@@ -50,6 +56,17 @@ public class LewelList extends AppCompatActivity {
         B6=findViewById(R.id.b6);
         B7=findViewById(R.id.b7);
         B8=findViewById(R.id.b8);
+        B9=findViewById(R.id.b9);
+        B10=findViewById(R.id.b10);
+        B11=findViewById(R.id.b11);
+        B12=findViewById(R.id.b12);
+        B13=findViewById(R.id.b13);
+        B14=findViewById(R.id.b14);
+        B15=findViewById(R.id.b15);
+        B16=findViewById(R.id.b16);
+        B17=findViewById(R.id.b17);
+        B18=findViewById(R.id.b18);
+
 
         spr();
 
@@ -143,8 +160,128 @@ public class LewelList extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else powiadomienie();
+
             }
         });
+
+        B9.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v)
+        {
+            if(lewel8==1){
+                Intent intent = new Intent(LewelList.this,GameLI.class);
+                intent.putExtra("Lewel", "9");
+                startActivity(intent);
+            }
+            else powiadomienie();
+         }
+        });
+
+        B10.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel9==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "10");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+
+        B11.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel10==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "11");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+
+        B12.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v)
+        {
+            if(lewel11==1){
+                Intent intent = new Intent(LewelList.this,GameLI.class);
+                intent.putExtra("Lewel", "12");
+                startActivity(intent);
+            }
+            else powiadomienie();
+        }
+        });
+
+        B13.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel12==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "13");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+
+        B14.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel13==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "14");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+        B15.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel14==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "15");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+        B16.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel15==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "16");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+        B17.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel16==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "17");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+        B18.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                if(lewel17==1){
+                    Intent intent = new Intent(LewelList.this,GameLI.class);
+                    intent.putExtra("Lewel", "18");
+                    startActivity(intent);
+                }
+                else powiadomienie();
+            }
+        });
+
+
+
 
 
 
@@ -234,6 +371,88 @@ public class LewelList extends AppCompatActivity {
                     null // Drawable bottom
             );
         }
+        if(lewel9==1){
+            B9.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel10==1){
+            B10.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel11==1){
+            B11.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel12==1){
+            B12.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel13==1){
+            B13.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+
+        if(lewel14==1){
+            B14.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+
+        if(lewel15==1){
+            B15.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel16==1){
+            B16.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel17==1){
+            B17.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+        if(lewel18==1){
+            B18.setCompoundDrawablesWithIntrinsicBounds(
+                    null, // Drawable left
+                    null, // Drawable top
+                    chek, // Drawable right
+                    null // Drawable bottom
+            );
+        }
     }
 
     void Wczytajprefy(){
@@ -254,6 +473,13 @@ public class LewelList extends AppCompatActivity {
             lewel12 = preferences.getInt("lewel12",0);
             lewel13 = preferences.getInt("lewel13",0);
             lewel14 = preferences.getInt("lewel14",0);
+
+            lewel15 = preferences.getInt("lewel15",0);
+            lewel16 = preferences.getInt("lewel16",0);
+            lewel17 = preferences.getInt("lewel17",0);
+            lewel18 = preferences.getInt("lewel18",0);
+            lewel19 = preferences.getInt("lewel19",0);
+            lewel20 = preferences.getInt("lewel20",0);
 
 
 

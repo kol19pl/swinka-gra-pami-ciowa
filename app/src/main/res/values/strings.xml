@@ -14,6 +14,16 @@
     <string name="l6" translatable="false">Level 6</string>
     <string name="l7" translatable="false">Level 7</string>
     <string name="l8" translatable="false">Level 8</string>
+    <string name="l9" translatable="false">Level 9</string>
+    <string name="l10" translatable="false">Level 10</string>
+    <string name="l11" translatable="false">Level 11</string>
+    <string name="l12" translatable="false">Level 12</string>
+    <string name="l13" translatable="false">Level 13</string>
+    <string name="l14" translatable="false">Level 14</string>
+    <string name="l15" translatable="false">Level 15</string>
+    <string name="l16" translatable="false">Level 16</string>
+    <string name="l17" translatable="false">Level 17</string>
+    <string name="l18" translatable="false">Level 18</string>
     <string name="wybie_level">Select Level</string>
     <string name="aby_odblokowa_ten_lewel_odblokuj_poprzedni">To unlock this level, unlock the previous one :)</string>
     <string name="wybierz_kolor_zakrytego_pola">Select the color of the hidden field</string>
