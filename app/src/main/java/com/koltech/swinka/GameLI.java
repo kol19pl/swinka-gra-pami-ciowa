@@ -11,11 +11,19 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -95,6 +103,8 @@ public class GameLI extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        signInSilently();
 
 
     }
@@ -828,31 +838,144 @@ public class GameLI extends AppCompatActivity {
             }
         });
 
-        if(lewel==1){  editorpref.putInt("lewel1",1);editorpref.apply();}
-        if(lewel==2){  editorpref.putInt("lewel2",1);editorpref.apply();}
-        if(lewel==3){  editorpref.putInt("lewel3",1);editorpref.apply();}
-        if(lewel==4){  editorpref.putInt("lewel4",1);editorpref.apply();}
-        if(lewel==5){  editorpref.putInt("lewel5",1);editorpref.apply();}
-        if(lewel==6){  editorpref.putInt("lewel6",1);editorpref.apply();}
-        if(lewel==7){  editorpref.putInt("lewel7",1);editorpref.apply();}
-        if(lewel==8){  editorpref.putInt("lewel8",1);editorpref.apply();}
-        if(lewel==9){  editorpref.putInt("lewel9",1);editorpref.apply();}
-        if(lewel==10){  editorpref.putInt("lewel10",1);editorpref.apply();}
-        if(lewel==11){  editorpref.putInt("lewel11",1);editorpref.apply();}
-        if(lewel==12){  editorpref.putInt("lewel12",1);editorpref.apply();}
-        if(lewel==13){  editorpref.putInt("lewel13",1);editorpref.apply();}
-        if(lewel==14){  editorpref.putInt("lewel14",1);editorpref.apply();}
-        if(lewel==15){  editorpref.putInt("lewel15",1);editorpref.apply();}
-        if(lewel==16){  editorpref.putInt("lewel16",1);editorpref.apply();}
-        if(lewel==17){  editorpref.putInt("lewel17",1);editorpref.apply();}
-        if(lewel==18){  editorpref.putInt("lewel15",1);editorpref.apply();}
-        if(lewel==19){  editorpref.putInt("lewel15",1);editorpref.apply();}
+        if(lewel==1){  editorpref.putInt("lewel1",1);editorpref.apply();
+         try {
+             Achivment(getString(R.string.achievement_level_1));
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+        }
+        if(lewel==2){  editorpref.putInt("lewel2",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_2));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==3){  editorpref.putInt("lewel3",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_3));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==4){  editorpref.putInt("lewel4",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_4));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==5){  editorpref.putInt("lewel5",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_5));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==6){  editorpref.putInt("lewel6",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_6));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==7){  editorpref.putInt("lewel7",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_7));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==8){  editorpref.putInt("lewel8",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_8));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==9){  editorpref.putInt("lewel9",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_9));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==10){  editorpref.putInt("lewel10",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_10));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==11){  editorpref.putInt("lewel11",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_11));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==12){  editorpref.putInt("lewel12",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_12));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==13){  editorpref.putInt("lewel13",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_13));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==14){  editorpref.putInt("lewel14",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_14));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==15){  editorpref.putInt("lewel15",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_15));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==16){  editorpref.putInt("lewel16",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_16));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==17){  editorpref.putInt("lewel17",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_17));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==18){  editorpref.putInt("lewel18",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_18));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(lewel==19){  editorpref.putInt("lewel19",1);editorpref.apply();
+            try {
+                Achivment(getString(R.string.achievement_level_18));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-
-
-
-
-
+    }
+    void Achivment(String Acz){
+        Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
+                .unlock(Acz);
     }
 
 
@@ -1128,6 +1251,37 @@ public class GameLI extends AppCompatActivity {
                 wiadomosc,
                 Snackbar.LENGTH_SHORT)
                 .setDuration(5000).setAction("Action", null).show();
+    }
+
+    private void signInSilently() {
+        GoogleSignInOptions signInOptions = GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN;
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (GoogleSignIn.hasPermissions(account, signInOptions.getScopeArray())) {
+            // Already signed in.
+            // The signed in account is stored in the 'account' variable.
+            GoogleSignInAccount signedInAccount = account;
+        } else {
+            // Haven't been signed-in before. Try the silent sign-in first.
+            GoogleSignInClient signInClient = GoogleSignIn.getClient(this, signInOptions);
+            signInClient
+                    .silentSignIn()
+                    .addOnCompleteListener(
+                            this,
+                            new OnCompleteListener<GoogleSignInAccount>() {
+                                @Override
+                                public void onComplete(@NonNull Task<GoogleSignInAccount> task) {
+                                    if (task.isSuccessful()) {
+                                        // The signed in account is stored in the task's result.
+                                        GoogleSignInAccount signedInAccount = task.getResult();
+                                    } else {
+                                        // Player will need to sign-in explicitly using via UI.
+                                        // See [sign-in best practices](http://developers.google.com/games/services/checklist) for guidance on how and when to implement Interactive Sign-in,
+                                        // and [Performing Interactive Sign-in](http://developers.google.com/games/services/android/signin#performing_interactive_sign-in) for details on how to implement
+                                        // Interactive Sign-in.
+                                    }
+                                }
+                            });
+        }
     }
 
 

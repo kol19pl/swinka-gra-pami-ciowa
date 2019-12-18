@@ -11,7 +11,12 @@
 
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l1" />
+        android:text="@string/l1"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/b2"
@@ -20,7 +25,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l2" />
+        android:text="@string/l2"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b3"
@@ -29,7 +39,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l3" />
+        android:text="@string/l3"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b4"
@@ -38,7 +53,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l4" />
+        android:text="@string/l4"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b5"
@@ -47,7 +67,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l5" />
+        android:text="@string/l5"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b6"
@@ -56,7 +81,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l6" />
+        android:text="@string/l6"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b7"
@@ -65,7 +95,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l7" />
+        android:text="@string/l7"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b8"
@@ -74,7 +109,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l8" />
+        android:text="@string/l8"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b9"
@@ -83,7 +123,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l9" />
+        android:text="@string/l9"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b10"
@@ -92,7 +137,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l10" />
+        android:text="@string/l10"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b11"
@@ -101,7 +151,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l11" />
+        android:text="@string/l11"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b12"
@@ -110,7 +165,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l12" />
+        android:text="@string/l12"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b13"
@@ -119,7 +179,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l13" />
+        android:text="@string/l13"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b14"
@@ -128,7 +193,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l14" />
+        android:text="@string/l14"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b15"
@@ -137,7 +207,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l15" />
+        android:text="@string/l15"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b16"
@@ -146,7 +221,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l16" />
+        android:text="@string/l16"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b17"
@@ -155,7 +235,12 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l17" />
+        android:text="@string/l17"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/b18"
@@ -164,6 +249,11 @@
         android:layout_margin="5dp"
         android:background="@drawable/buton"
         android:drawableEnd="@drawable/nic"
-        android:text="@string/l18" />
+        android:text="@string/l18"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
 </LinearLayout>

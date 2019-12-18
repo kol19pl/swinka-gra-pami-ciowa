@@ -1,5 +1,6 @@
 package com.koltech.swinka;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -13,16 +14,47 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.drive.Drive;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private AdView mAdView;
+
+    private static final int RC_ACHIEVEMENT_UI = 9003;
+    private static final int RC_SIGN_IN = 9001;
+    Button signInButton;
+
+
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //signInButton = findViewById(R.id.Sing_in);
+
+
+
+
+
+
+
+
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -36,6 +68,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    public void Singin(View view) {
+
+
+        if (view.getId() == R.id.Sing_in) {
+            // start the asynchronous sign in flow
+            startSignInIntent();
+        } else if (view.getId() == R.id.Sing_out) {
+            // sign out.
+            signOut();
+            // show sign-in button, hide the sign-out button
+            findViewById(R.id.Sing_in).setVisibility(View.VISIBLE);
+            findViewById(R.id.Sing_out).setVisibility(View.GONE);
+        }
     }
 
     public void LewelList(View v){
@@ -83,6 +131,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void Achievements(View v){
+        try {
+
+
+            Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
+                    .getAchievementsIntent()
+                    .addOnSuccessListener(new OnSuccessListener<Intent>() {
+                        @Override
+                        public void onSuccess(Intent intent) {
+                            startActivityForResult(intent, RC_ACHIEVEMENT_UI);
+                        }
+                    });
+        } catch (Exception e) {
+            Powiadomienie("Nie udało się połonczyć z google");
+        }
+
+    }
+
     @Override
     public void onBackPressed(){
         ExitEX();
@@ -95,5 +161,83 @@ public class MainActivity extends AppCompatActivity {
                 wiadomosc,
                 Snackbar.LENGTH_SHORT)
                 .setDuration(20000).setAction("Action", null).show();
+    }
+
+
+    public void startSignInIntent() {
+        GoogleSignInClient signInClient = GoogleSignIn.getClient(this,
+                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
+        Intent intent = signInClient.getSignInIntent();
+        startActivityForResult(intent, RC_SIGN_IN);
+    }
+
+
+
+    private void signInSilently() {
+        GoogleSignInOptions signInOptions = GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN;
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (GoogleSignIn.hasPermissions(account, signInOptions.getScopeArray())) {
+            // Already signed in.
+            // The signed in account is stored in the 'account' variable.
+            GoogleSignInAccount signedInAccount = account;
+        } else {
+            // Haven't been signed-in before. Try the silent sign-in first.
+            GoogleSignInClient signInClient = GoogleSignIn.getClient(this, signInOptions);
+            signInClient
+                    .silentSignIn()
+                    .addOnCompleteListener(
+                            this,
+                            new OnCompleteListener<GoogleSignInAccount>() {
+                                @Override
+                                public void onComplete(@NonNull Task<GoogleSignInAccount> task) {
+                                    if (task.isSuccessful()) {
+                                        // The signed in account is stored in the task's result.
+                                        GoogleSignInAccount signedInAccount = task.getResult();
+                                    } else {
+                                        // Player will need to sign-in explicitly using via UI.
+                                        // See [sign-in best practices](http://developers.google.com/games/services/checklist) for guidance on how and when to implement Interactive Sign-in,
+                                        // and [Performing Interactive Sign-in](http://developers.google.com/games/services/android/signin#performing_interactive_sign-in) for details on how to implement
+                                        // Interactive Sign-in.
+                                    }
+                                }
+                            });
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if (result.isSuccess()) {
+                // The signed in account is stored in the result.
+                GoogleSignInAccount signedInAccount = result.getSignInAccount();
+            } else {
+                String message = result.getStatus().getStatusMessage();
+                if (message == null || message.isEmpty()) {
+                    message = "error";
+                }
+                new AlertDialog.Builder(this).setMessage(message)
+                        .setNeutralButton(android.R.string.ok, null).show();
+            }
+        }
+    }
+
+    private void signOut() {
+        GoogleSignInClient signInClient = GoogleSignIn.getClient(this,
+                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
+        signInClient.signOut().addOnCompleteListener(this,
+                new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // at this point, the user is signed out.
+                    }
+                });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        signInSilently();
     }
 }
