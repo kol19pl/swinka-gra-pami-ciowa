@@ -104,7 +104,7 @@ public class GameLI extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        signInSilently();
+     //   signInSilently();
 
 
     }
@@ -839,137 +839,42 @@ public class GameLI extends AppCompatActivity {
         });
 
         if(lewel==1){  editorpref.putInt("lewel1",1);editorpref.apply();
-         try {
-             Achivment(getString(R.string.achievement_level_1));
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
         }
         if(lewel==2){  editorpref.putInt("lewel2",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_2));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==3){  editorpref.putInt("lewel3",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_3));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==4){  editorpref.putInt("lewel4",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_4));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==5){  editorpref.putInt("lewel5",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_5));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==6){  editorpref.putInt("lewel6",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_6));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==7){  editorpref.putInt("lewel7",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_7));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==8){  editorpref.putInt("lewel8",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_8));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==9){  editorpref.putInt("lewel9",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_9));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==10){  editorpref.putInt("lewel10",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_10));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==11){  editorpref.putInt("lewel11",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_11));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==12){  editorpref.putInt("lewel12",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_12));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==13){  editorpref.putInt("lewel13",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_13));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==14){  editorpref.putInt("lewel14",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_14));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==15){  editorpref.putInt("lewel15",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_15));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==16){  editorpref.putInt("lewel16",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_16));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==17){  editorpref.putInt("lewel17",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_17));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==18){  editorpref.putInt("lewel18",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_18));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         if(lewel==19){  editorpref.putInt("lewel19",1);editorpref.apply();
-            try {
-                Achivment(getString(R.string.achievement_level_18));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
 
     }

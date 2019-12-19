@@ -71,20 +71,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void Singin(View view) {
 
 
-        if (view.getId() == R.id.Sing_in) {
+
+       // if (view.getId() == R.id.Sing_in) {
             // start the asynchronous sign in flow
-            startSignInIntent();
-        } else if (view.getId() == R.id.Sing_out) {
-            // sign out.
-            signOut();
-            // show sign-in button, hide the sign-out button
-            findViewById(R.id.Sing_in).setVisibility(View.VISIBLE);
-            findViewById(R.id.Sing_out).setVisibility(View.GONE);
-        }
-    }
+
+
+
 
     public void LewelList(View v){
         Intent intent = new Intent(MainActivity.this,LewelList.class);
@@ -131,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void Singin(View v){
+        startSignInIntent();
+    }
+
     public void Achievements(View v){
         try {
 
@@ -144,7 +142,23 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
         } catch (Exception e) {
-            Powiadomienie("Nie udało się połonczyć z google");
+
+            AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.google_main, null);
+            mBuilder.setView(mView);
+            Button ok = (Button) mView.findViewById(R.id.Sing_in_ok);
+            final AlertDialog dialog = mBuilder.create();
+            dialog.show();
+
+            ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.cancel();
+                }
+            });
+
+
+
         }
 
     }
@@ -215,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 String message = result.getStatus().getStatusMessage();
                 if (message == null || message.isEmpty()) {
-                    message = "error";
+                    message = "For some reason, we could not connect to google services.";
                 }
                 new AlertDialog.Builder(this).setMessage(message)
                         .setNeutralButton(android.R.string.ok, null).show();

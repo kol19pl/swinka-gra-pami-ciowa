@@ -10,8 +10,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import java.lang.reflect.Array;
 
@@ -69,6 +78,7 @@ public class LewelList extends AppCompatActivity {
 
 
         spr();
+        achivmentupd();
 
         B1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
@@ -294,6 +304,7 @@ public class LewelList extends AppCompatActivity {
         Wczytajprefy();
 
         spr();
+        achivmentupd();
     }
 
     void spr(){
@@ -491,6 +502,108 @@ public class LewelList extends AppCompatActivity {
         SharedPreferences.Editor editorpref = getApplicationContext().getSharedPreferences("Swinka", MODE_PRIVATE).edit();
         editorpref.putInt("lewel1",lewel1);
         editorpref.apply();
+    }
+
+    void achivmentupd()
+    {
+        try {
+            signInSilently();
+
+            if (lewel1 == 1) {
+                Achivment(getString(R.string.achievement_level_1));
+            }
+            if (lewel2 == 1) {
+                Achivment(getString(R.string.achievement_level_2));
+            }
+            if (lewel3 == 1) {
+                Achivment(getString(R.string.achievement_level_3));
+            }
+            if (lewel4 == 1) {
+                Achivment(getString(R.string.achievement_level_4));
+            }
+            if (lewel5 == 1) {
+                Achivment(getString(R.string.achievement_level_5));
+            }
+            if (lewel6 == 1) {
+                Achivment(getString(R.string.achievement_level_6));
+            }
+            if (lewel7 == 1) {
+                Achivment(getString(R.string.achievement_level_7));
+            }
+            if (lewel8 == 1) {
+                Achivment(getString(R.string.achievement_level_8));
+            }
+            if (lewel9 == 1) {
+                Achivment(getString(R.string.achievement_level_9));
+            }
+            if (lewel10 == 1) {
+                Achivment(getString(R.string.achievement_level_10));
+            }
+            if (lewel11 == 1) {
+                Achivment(getString(R.string.achievement_level_11));
+            }
+            if (lewel12 == 1) {
+                Achivment(getString(R.string.achievement_level_12));
+            }
+            if (lewel13 == 1) {
+                Achivment(getString(R.string.achievement_level_13));
+            }
+            if (lewel14 == 1) {
+                Achivment(getString(R.string.achievement_level_14));
+            }
+            if (lewel15 == 1) {
+                Achivment(getString(R.string.achievement_level_15));
+            }
+            if (lewel16 == 1) {
+                Achivment(getString(R.string.achievement_level_16));
+            }
+            if (lewel17 == 1) {
+                Achivment(getString(R.string.achievement_level_17));
+            }
+            if (lewel18 == 1) {
+                Achivment(getString(R.string.achievement_level_18));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    void Achivment(String Acz){
+        Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
+                .unlock(Acz);
+    }
+
+
+    private void signInSilently() {
+        GoogleSignInOptions signInOptions = GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN;
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (GoogleSignIn.hasPermissions(account, signInOptions.getScopeArray())) {
+            // Already signed in.
+            // The signed in account is stored in the 'account' variable.
+            GoogleSignInAccount signedInAccount = account;
+        } else {
+            // Haven't been signed-in before. Try the silent sign-in first.
+            GoogleSignInClient signInClient = GoogleSignIn.getClient(this, signInOptions);
+            signInClient
+                    .silentSignIn()
+                    .addOnCompleteListener(
+                            this,
+                            new OnCompleteListener<GoogleSignInAccount>() {
+                                @Override
+                                public void onComplete(@NonNull Task<GoogleSignInAccount> task) {
+                                    if (task.isSuccessful()) {
+                                        // The signed in account is stored in the task's result.
+                                        GoogleSignInAccount signedInAccount = task.getResult();
+                                    } else {
+                                        // Player will need to sign-in explicitly using via UI.
+                                        // See [sign-in best practices](http://developers.google.com/games/services/checklist) for guidance on how and when to implement Interactive Sign-in,
+                                        // and [Performing Interactive Sign-in](http://developers.google.com/games/services/android/signin#performing_interactive_sign-in) for details on how to implement
+                                        // Interactive Sign-in.
+                                    }
+                                }
+                            });
+        }
     }
 
     void powiadomienie(){
