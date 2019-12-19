@@ -26,4 +26,7 @@
     <string name="czy_napewno_chcesz_wyj">Czy na pewno chcesz wyjść?</string>
     <string name="nie">nie</string>
     <string name="tak">tak</string>
+    <string name="achievements">Osiągnięcia</string>
+    <string name="sing_in">Zaloguj się</string>
+    <string name="in_order_to_use_the_achievement_function_log_in_with_your_google_account">Aby skorzystać z funkcji osiągania, zaloguj się na swoje konto Google.</string>
 </resources>

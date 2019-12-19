@@ -44,5 +44,8 @@
     <string name="czy_napewno_chcesz_wyj">Are you sure you want to leave?</string>
     <string name="tak">Yes</string>
     <string name="nie">no</string>
+    <string name="achievements">Achievements</string>
+    <string name="sing_in">Sing in</string>
+    <string name="in_order_to_use_the_achievement_function_log_in_with_your_google_account">In order to use the achievement function, log in with your Google account.</string>
 
 </resources>

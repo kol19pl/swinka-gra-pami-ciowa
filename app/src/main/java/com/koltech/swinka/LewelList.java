@@ -18,7 +18,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.drive.Drive;
 import com.google.android.gms.games.Games;
+import com.google.android.gms.games.GamesClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -79,6 +82,7 @@ public class LewelList extends AppCompatActivity {
 
         spr();
         achivmentupd();
+
 
         B1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
@@ -507,7 +511,13 @@ public class LewelList extends AppCompatActivity {
     void achivmentupd()
     {
         try {
+
             signInSilently();
+
+
+
+
+
 
             if (lewel1 == 1) {
                 Achivment(getString(R.string.achievement_level_1));
@@ -582,6 +592,11 @@ public class LewelList extends AppCompatActivity {
             // Already signed in.
             // The signed in account is stored in the 'account' variable.
             GoogleSignInAccount signedInAccount = account;
+
+            GamesClient gamesClient = Games.getGamesClient(LewelList.this, signedInAccount);
+            gamesClient.setViewForPopups(findViewById(R.id.container_pop_up));
+
+
         } else {
             // Haven't been signed-in before. Try the silent sign-in first.
             GoogleSignInClient signInClient = GoogleSignIn.getClient(this, signInOptions);
@@ -604,6 +619,7 @@ public class LewelList extends AppCompatActivity {
                                 }
                             });
         }
+
     }
 
     void powiadomienie(){

@@ -26,4 +26,7 @@
     <string name="tura_zaliczona">" turn completed."</string>
     <string name="wybie_level">Select Level</string>
     <string name="wybierz_kolor_zakrytego_pola">Select the color of the hidden field</string>
+    <string name="achievements">Achievements</string>
+    <string name="sing_in">Sign in</string>
+    <string name="in_order_to_use_the_achievement_function_log_in_with_your_google_account">In order to use the achievement function, log in with your Google account.</string>
 </resources>

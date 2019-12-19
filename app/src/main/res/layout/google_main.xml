@@ -13,7 +13,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="In order to use the achievement function, log in with your Google account."
+        android:text="@string/in_order_to_use_the_achievement_function_log_in_with_your_google_account"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="18sp"

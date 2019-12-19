@@ -26,4 +26,7 @@
     <string name="czy_napewno_chcesz_wyj">Bist du sicher, dass du gehen willst?</string>
     <string name="nie">nicht</string>
     <string name="tak">so</string>
+    <string name="achievements">Erfolge</string>
+    <string name="sing_in">Einloggen</string>
+    <string name="in_order_to_use_the_achievement_function_log_in_with_your_google_account">Um die Leistungsfunktion zu nutzen, melden Sie sich mit Ihrem Google-Konto an.</string>
 </resources>
