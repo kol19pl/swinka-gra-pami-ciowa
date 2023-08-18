@@ -1,5 +1,6 @@
 package com.koltech.swinka;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -107,7 +108,7 @@ public class GameLI extends AppCompatActivity {
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
             }
         });
         adContainerView = findViewById(R.id.adCongame);
@@ -691,11 +692,13 @@ public class GameLI extends AppCompatActivity {
 
 
         czer.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             public void onClick(View v)
             {
                 if(kolorKartyWybranej==1){
                 PunktyZaliczeniaLewelu++;
-                    GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+" "+PunktyZaliczeniaLewelu+"/"+PunktyDoZaliczeniaLewelu);
+                                String punkty=" "+PunktyZaliczeniaLewelu +"//"+ PunktyDoZaliczeniaLewelu;
+                GurnabelkaPunkty.setText(getResources().getString(R.string.do_zaliczenia_lew)+punkty);
 
                 if(PunktyZaliczeniaLewelu<3){
                     Powiadomienie(getResources().getString(R.string.gratulacje)+PunktyZaliczeniaLewelu+getResources().getString(R.string.tura_zaliczona));
